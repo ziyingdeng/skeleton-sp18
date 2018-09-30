@@ -52,19 +52,13 @@ public class NBody{
 			StdDraw.clear();
 			StdDraw.picture(0,0,"images/starfield.jpg");
 			for(int i=0;i<p.length;i++){
-				p[i].update(times,xForces[i],yForces[i]);
+				p[i].update(dt,xForces[i],yForces[i]);
 				p[i].draw();
 			}
 			StdDraw.show();
-			StdDraw.pause(100);
+			StdDraw.pause(10);
 			times += dt;
 		}
-		StdOut.printf("%d\n", planets.length);
-		StdOut.printf("%.2e\n", radius);
-		for (int i = 0; i < planets.length; i++) {
-    		StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
-            planets[i].xxPos, planets[i].yyPos, planets[i].xxVel,
-            planets[i].yyVel, planets[i].mass, planets[i].imgFileName); 
-    	}
+		
 	}
 }
